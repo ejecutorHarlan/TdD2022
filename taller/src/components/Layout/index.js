@@ -13,11 +13,7 @@ const Layout = ({ children }) => {
         <Link text={'Contacto'} to={'/contact'} customStyle={buttonStyles} />
         <Link text={'Servicios'} to={'/services'} customStyle={buttonStyles} />
         <Link text={'Clientes'} to={'/clients'} customStyle={buttonStyles} />
-        <Link
-          text={'Clientes de la base'}
-          to={'http://localhost:3000/api/clients'}
-          customStyle={buttonStyles}
-        />
+        <Link text={'Registro'} to={'/register'} customStyle={buttonStyles} />
       </header>
       <article className={styles.article}>{children}</article>
       <footer className={styles.footer}>

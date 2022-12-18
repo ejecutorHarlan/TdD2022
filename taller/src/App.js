@@ -8,6 +8,7 @@ import Turnos from './screens/Turnos/turnos';
 import Servicios from './screens/Servicios/services';
 import Contacto from './screens/Contacto/contact';
 import Clients from './screens/Clientes/clients';
+import Register from './screens/Registrer/register';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/services' element={<Servicios />} />
         <Route path='/contact' element={<Contacto />} />
         <Route path='/clients' element={<Clients />} />
+        <Route path='/register' element={<Register />} />
 
         {/* <div className="App">
           <Form />
