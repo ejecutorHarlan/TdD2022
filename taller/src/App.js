@@ -1,14 +1,14 @@
 //import logo from "./logo.svg";
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Login from './screens/Login';
-import Layout from './components/Layout';
-import Log from './screens/Login/log';
-import Turnos from './screens/Turnos/turnos';
-import Servicios from './screens/Servicios/services';
-import Contacto from './screens/Contacto/contact';
-import Clients from './screens/Clientes/clients';
-import Register from './screens/Registrer/register';
+import Login from './screens/Login/index.js';
+import Layout from './components/Layout/index.js';
+import Log from './screens/Login/log.js';
+import Turnos from './screens/Turnos/turnos.js';
+import Servicios from './screens/Servicios/services.js';
+import Contacto from './screens/Contacto/contact.js';
+import Clients from './screens/Clientes/clients.js';
+import Register from './screens/Registrer/register.js';
 
 const App = () => {
   return (

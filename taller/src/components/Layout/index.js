@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './layout.module.css';
-import Link from '../Link';
-import buttonStyles from './constants';
+import Link from '../Link/index.js';
+import { buttonStyles } from './constants.js';
 
 const Layout = ({ children }) => {
   return (

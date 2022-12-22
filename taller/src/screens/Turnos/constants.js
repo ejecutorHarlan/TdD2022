@@ -1,1 +1,1 @@
-const buttonStyles = { margin: '150px' };
+export const buttonStyles = { margin: '150px' };

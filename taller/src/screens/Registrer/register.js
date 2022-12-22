@@ -1,12 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import Link from '../../components/Link';
+//import Link from '../../components/Link';
 import styles from './login.module.css';
-import buttonStyles from './constants';
+//import buttonStyles from './constants';
 
-import { addClient } from '../../controllers/clients';
-import ButtonShared from '../../components/sharedButton/index';
-import InputShared from '../../components/sharedInput/index';
+import { addClient } from '../../controllers/clients.js';
+import ButtonShared from '../../components/sharedButton/index.js';
+import InputShared from '../../components/sharedInput/index.js';
 //import conn from "../../db/keys";
 
 const Register = () => {

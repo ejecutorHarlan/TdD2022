@@ -1,26 +1,87 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import Link from '../../components/Link';
+import Link from '../../components/Link/index.js';
 import styles from './login.module.css';
-import buttonStyles from './constants';
-import ButtonShared from '../../components/sharedButton/index';
-import InputShared from '../../components/sharedInput/index';
-import { getClientById } from '../../controllers/clients';
+import { buttonStyles } from './constants.js';
+import ButtonShared from '../../components/sharedButton/index.js';
+import InputShared from '../../components/sharedInput/index.js';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  getClient,
+  closeSess,
+  getAutoCliente,
+} from '../../redux/Clients/thunks.js';
+import { useNavigate } from 'react-router-dom';
+
+//import { getClientById } from '../../controllers/clients';
 //import conn from "../../db/keys";
 
+// const getClientById = async (req, res) => {
+//   //console.log('REEQ solito', req.idCliente);
+//   //const datosClientes = [];
+
+//   const id = { idCliente: req.idCliente };
+//   try {
+//     let response = await fetch('http://localhost:3000/aclientes', {
+//       method: 'POST', // *GET, POST, PUT, DELETE, etc.
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(id),
+//     });
+//     let dataClient = await response.json();
+//     var datosClientes = dataClient;
+
+//     if (response.status !== 200) {
+//       //dismissIsLoading();
+//     } else {
+//       //dismissIsLoading();
+//       //await getProducts(dispatch);
+//       console.log('Parece que anduvo', dataClient);
+//       console.log('Parece que anduvo con redux', client);
+//     }
+//   } catch (error) {
+//     throw new Error(error);
+//   }
+// };
+
 const Log = () => {
+  const navigate = useNavigate();
+  const { client } = useSelector((state) => state.client);
+  const { islogged } = useSelector((state) => state.islogged);
+
+  const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(() => getClient(dispatch));
+  // }, [dispatch]);
+
+  console.log('CLiente redux', client);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-    setValue,
+    //setValue,
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log('dataaa', data);
-    await getClientById(data);
-    await console.log('getclien', getClientById.datosClientes);
+    console.log('esta loguedo', islogged);
+    console.log('dataaax', data.idCliente);
+    dispatch(() => getClient(dispatch, data.idCliente));
+    dispatch(() => getAutoCliente(dispatch, data.idCliente));
+
+    navigate('/turnos');
   };
+
+  // setTimeout(() => {
+  //   console.log('esta loguedo', islogged);
+  // }, 2000);
+
+  // const closeSession = () => {
+  //   dispatch(() => closeSess(dispatch));
+  //   navigate('/');
+  // };
 
   return (
     <div className={styles.container}>
@@ -46,12 +107,13 @@ const Log = () => {
           //styleshare={Styles.buttonStyles}
           type={'submit'}
         />
-        <Link
+        {/* <Link
           text={'Registrarse'}
           to={'/register'}
           customStyle={buttonStyles}
-        />
+        /> */}
       </form>
+      {/* <button onClick={() => closeSession()}> Cerrar Sesión </button> */}
     </div>
   );
 };
