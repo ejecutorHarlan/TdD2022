@@ -1,23 +1,22 @@
 import React from 'react';
 import styles from './layout.module.css';
-import Link from '../Link';
-import buttonStyles from './constants';
+import Link from '../Link/index.js';
+import { buttonStyles } from './constants.js';
 
 const Layout = ({ children }) => {
   return (
     <div className='main'>
       <header className={styles.header}>
-        <h1 className={styles.title}>DB Mecánica</h1>
+        <a href='/'>
+          <h1 className={styles.title}>DB Mecánica</h1>
+        </a>
+
         <Link text={'Ingresar'} to={'/log'} customStyle={buttonStyles} />
         <Link text={'Turnos'} to={'/turnos'} customStyle={buttonStyles} />
         <Link text={'Contacto'} to={'/contact'} customStyle={buttonStyles} />
         <Link text={'Servicios'} to={'/services'} customStyle={buttonStyles} />
         <Link text={'Clientes'} to={'/clients'} customStyle={buttonStyles} />
-        <Link
-          text={'Clientes de la base'}
-          to={'http://localhost:3000/api/clients'}
-          customStyle={buttonStyles}
-        />
+        <Link text={'Registro'} to={'/register'} customStyle={buttonStyles} />
       </header>
       <article className={styles.article}>{children}</article>
       <footer className={styles.footer}>

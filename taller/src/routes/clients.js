@@ -7,6 +7,12 @@ const clientesModel = require('../models/clients');
 const Sequelize = require('sequelize');
 app.use(express.json());
 app.use(cors());
+const cors = require('cors');
+
+const corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
 
 // //Establecemos los prámetros de conexión
 // const conexion = mysql.createConnection({

@@ -1,7 +1,7 @@
 import React from 'react';
-import Link from '../../components/Link';
+import Link from '../../components/Link/index.js';
 import styles from './login.module.css';
-import buttonStyles from './constants';
+import { buttonStyles } from './constants.js';
 //import pool from "../../db/db";
 
 const Login = () => {
