@@ -10,16 +10,24 @@ import {
   SET_ISLOGGED,
   CLOSE_SESSION,
   GET_AUTO,
+  SET_DATE,
 } from './types.js';
 
 const INITIAL_STATE = {
   client: {},
   islogged: false,
   auto: {},
+  date: null,
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case SET_DATE:
+      return {
+        ...state,
+        date: action.payload,
+      };
+
     case GET_AUTO:
       return {
         ...state,

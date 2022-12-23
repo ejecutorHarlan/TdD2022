@@ -71,12 +71,11 @@ const Log = () => {
     dispatch(() => getClient(dispatch, data.idCliente));
     dispatch(() => getAutoCliente(dispatch, data.idCliente));
 
-    navigate('/turnos');
+    setTimeout(() => {
+      console.log('esta loguedo', islogged);
+      navigate('/turnos');
+    }, 2000);
   };
-
-  // setTimeout(() => {
-  //   console.log('esta loguedo', islogged);
-  // }, 2000);
 
   // const closeSession = () => {
   //   dispatch(() => closeSess(dispatch));
@@ -98,7 +97,7 @@ const Log = () => {
         <InputShared
           placeholder={'Password'}
           //styleshare={Styles.inputbox}
-          type={'passwors'}
+          type={'password'}
           register={register}
           name={'password'}
         />

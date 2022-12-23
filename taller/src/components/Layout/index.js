@@ -7,7 +7,10 @@ const Layout = ({ children }) => {
   return (
     <div className='main'>
       <header className={styles.header}>
-        <h1 className={styles.title}>DB Mecánica</h1>
+        <a href='/'>
+          <h1 className={styles.title}>DB Mecánica</h1>
+        </a>
+
         <Link text={'Ingresar'} to={'/log'} customStyle={buttonStyles} />
         <Link text={'Turnos'} to={'/turnos'} customStyle={buttonStyles} />
         <Link text={'Contacto'} to={'/contact'} customStyle={buttonStyles} />

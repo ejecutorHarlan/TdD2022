@@ -8,6 +8,7 @@ const rootReducer = combineReducers({
   client: clientReducer,
   islogged: clientReducer,
   auto: clientReducer,
+  date: clientReducer,
 });
 
 export default rootReducer;

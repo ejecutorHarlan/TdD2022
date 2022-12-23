@@ -5,6 +5,7 @@ let cors = require('cors');
 const clientesModel = require('./models/clients.js');
 const clientController = require('./controllers/clients.js');
 const carController = require('./controllers/cars.js');
+const turnController = require('./controllers/turn.js');
 const database = require('./db/db');
 app.use(express.json());
 
@@ -45,6 +46,8 @@ app.get('/car', carController.getall);
 app.get('/car/:id', carController.getCarById);
 app.delete('/car/:id', carController.deleteCar);
 app.patch('/car/:id', carController.updateCar);
+
+app.post('/turn', turnController.createTurn);
 
 // app.get('/clientes', (req, res) => {
 

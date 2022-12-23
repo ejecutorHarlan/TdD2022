@@ -8,7 +8,42 @@ import {
   islogged,
   closeSession,
   getAuto,
+  setDate,
 } from './actions.js';
+
+export const setFecha = async (dispatch, dataFecha) => {
+  try {
+    console.log('adentro del setdate', dataFecha);
+    //const id = { idCliente: 'bbilesj@github.io' };
+    dispatch(setIsLoading());
+    let response = await fetch('http://localhost:3000/turn', {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        fechaTurno: dataFecha.fechaTurno,
+        idClienteReparacion: dataFecha.idClienteReparacion,
+      }),
+    });
+
+    let dataClient = await response.json();
+
+    if (response.status !== 200) {
+      dispatch(setProducts([]));
+      dismissIsLoading();
+    } else {
+      //console.log('Parece que anduvo con redux', dataClient);
+      dispatch(islogged());
+      dispatch(setDate(dataClient));
+
+      //dispatch(dismissIsLoading());
+    }
+    dismissIsLoading();
+  } catch (error) {
+    throw new Error(error);
+  }
+};
 
 export const getAutoCliente = async (dispatch, id) => {
   console.log('iddd', id);

@@ -9,3 +9,4 @@ export const GET_CLIENT = 'GET_CLIENT';
 export const SET_ISLOGGED = 'SET_ISLOGGED';
 export const CLOSE_SESSION = 'CLOSE_SESSION';
 export const GET_AUTO = 'GET_AUTO';
+export const SET_DATE = 'SET_DATE';

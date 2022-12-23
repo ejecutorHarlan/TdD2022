@@ -1,5 +1,5 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React from 'react';
+import { useForm } from 'react-hook-form';
 
 const InputShared = ({
   placeholder,
@@ -10,12 +10,14 @@ const InputShared = ({
   required,
   max,
   pattern,
+  value,
 }) => {
   return (
     <input
       type={type}
       className={styleshare}
       placeholder={placeholder}
+      value={value}
       {...register(name, {
         required: required,
         maxLength: max,

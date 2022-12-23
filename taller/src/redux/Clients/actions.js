@@ -10,7 +10,17 @@ import {
   SET_ISLOGGED,
   CLOSE_SESSION,
   GET_AUTO,
+  SET_DATE,
 } from './types.js';
+
+export const setDate = (date) => {
+  return {
+    type: SET_DATE,
+    payload: {
+      date: date,
+    },
+  };
+};
 
 export const getAuto = (client) => {
   return {

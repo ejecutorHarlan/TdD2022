@@ -21,10 +21,6 @@ const App = () => {
         <Route path='/contact' element={<Contacto />} />
         <Route path='/clients' element={<Clients />} />
         <Route path='/register' element={<Register />} />
-
-        {/* <div className="App">
-          <Form />
-        </div> */}
       </Routes>
     </Layout>
   );
